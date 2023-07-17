@@ -52,6 +52,12 @@
         android:textAllCaps="false"
         android:textColor="#454141" />
 
-
+    <ListView
+        android:id="@+id/listView"
+        style="@style/Widget.AppCompat.Light.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addButton"
+        android:layout_marginTop="16dp" />
 
 </RelativeLayout>

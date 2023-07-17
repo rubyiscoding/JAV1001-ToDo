@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             checkedTextView.isChecked = !checkedTextView.isChecked
         }
 
-// Item long click listener to prompt delete confirmation dialog
+        // Item long click listener to prompt delete confirmation dialog
         listView.setOnItemLongClickListener { _, _, position, _ ->
             val itemToDelete = items[position]
             val deleteItemDialog = AlertDialog.Builder(this)

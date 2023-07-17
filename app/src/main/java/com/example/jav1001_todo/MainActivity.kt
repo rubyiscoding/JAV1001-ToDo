@@ -9,7 +9,6 @@ import android.widget.CheckedTextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var editText: EditText

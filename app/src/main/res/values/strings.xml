@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JAV1001-ToDo</string>
+    <string name="app_name">JAV1001-ToDo</string> <!-- The name of the app -->
     <string name="enter_a_task">Enter a task.</string>
     <string name="add">Add</string>
     <string name="delete">Delete</string>

@@ -8,6 +8,7 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!-- Header TextView -->
     <TextView
         android:id="@+id/headerTextView"
         android:layout_width="match_parent"
@@ -21,6 +22,7 @@
         android:textSize="48sp"
         android:textStyle="bold" />
 
+    <!-- EditText for entering tasks -->
     <EditText
         android:id="@+id/editText"
         style="@style/Widget.AppCompat.EditText"
@@ -34,11 +36,11 @@
         android:singleLine="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#000000"
-        android:textColorHint="#D81B60"
         android:textSize="24sp"
         android:inputType="textMultiLine"
         tools:ignore="HardcodedText,TextFields" />
 
+    <!-- Add Button -->
     <Button
         android:id="@+id/addButton"
         style="@style/Widget.Material3.ExtendedFloatingActionButton.Tertiary"
@@ -52,6 +54,7 @@
         android:textAllCaps="false"
         android:textColor="#454141" />
 
+    <!-- ListView for displaying tasks -->
     <ListView
         android:id="@+id/listView"
         style="@style/Widget.AppCompat.Light.ListView.DropDown"

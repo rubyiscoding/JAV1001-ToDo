@@ -4,6 +4,10 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import androidx.appcompat.app.AlertDialog
+import android.widget.CheckedTextView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +41,28 @@ class MainActivity : AppCompatActivity() {
                 editText.clearFocus() // Remove focus from the EditText
             }
         }
+        // Item click listener to toggle item's checked state
+        listView.setOnItemClickListener { _, view, _, _ ->
+            val checkedTextView = view as CheckedTextView
+            checkedTextView.isChecked = !checkedTextView.isChecked
+        }
 
+// Item long click listener to prompt delete confirmation dialog
+        listView.setOnItemLongClickListener { _, _, position, _ ->
+            val itemToDelete = items[position]
+            val deleteItemDialog = AlertDialog.Builder(this)
+                .setTitle("Delete Item")
+                .setMessage("Are you sure you want to delete \"$itemToDelete\"?")
+                .setPositiveButton("Delete") { _, _ ->
+                    items.removeAt(position)
+                    adapter.notifyDataSetChanged()
+                    Snackbar.make(listView, "Item \"$itemToDelete\" deleted", Snackbar.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Cancel", null)
+                .create()
+            deleteItemDialog.show()
+            true
+        }
 
     }
 }
